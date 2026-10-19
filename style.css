@@ -1,30 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:wght@600;700&display=swap');
+
 /* Personal site: Md Ibrahim Khandakar
-   Plain CSS, no build step. Light and dark follow the visitor's system setting. */
+   Plain CSS, no build step. White theme. */
 
 :root {
-  --bg: #faf9f6;
+  --bg: #ffffff;
   --surface: #ffffff;
-  --ink: #1d1c1a;
-  --muted: #5f5c55;
-  --line: #e3dfd6;
+  --ink: #1a1a1a;
+  --muted: #5b6068;
+  --line: #e5e7eb;
   --accent: #0a56a8;
   --accent-ink: #ffffff;
-  --tag: #eef2f8;
-  --serif: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, serif;
-  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #14151a;
-    --surface: #1b1d23;
-    --ink: #ebeae6;
-    --muted: #a3a19b;
-    --line: #2c2f37;
-    --accent: #8ab8ff;
-    --accent-ink: #0b1220;
-    --tag: #232834;
-  }
+  --tag: #f1f5f9;
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -36,7 +25,7 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--sans);
-  font-size: 17px;
+  font-size: 16.5px;
   line-height: 1.65;
 }
 
