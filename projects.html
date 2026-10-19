@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects · Md Ibrahim Khandakar</title>
+  <meta name="description" content="Projects by Md Ibrahim Khandakar: real-time stereo matching in C++, an open-source implementation of the FINALLY speech-enhancement model, and an ICASSP 2026 URGENT Challenge top-10 entry.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a56a8'/%3E%3Ctext x='50' y='66' font-size='52' font-family='Georgia,serif' text-anchor='middle' fill='white'%3EIK%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="page">
+    <aside class="sidebar">
+      <!-- To use a photo: replace the initials with <img src="images/profile.jpg" alt="Md Ibrahim Khandakar"> -->
+      <div class="avatar" aria-hidden="true">IK</div>
+      <div class="id">
+        <p class="name">Md Ibrahim Khandakar</p>
+        <p class="role">BSc in Computer Science &amp; Engineering<br>University of Dhaka</p>
+        <p class="place">Dhaka, Bangladesh</p>
+      </div>
+      <ul class="links">
+        <li><span class="label">Email</span> fahimcp495 [at] gmail [dot] com</li>
+        <li><span class="label">GitHub</span> <a href="https://github.com/fahimcp495">fahimcp495</a></li>
+        <li><span class="label">LinkedIn</span> <a href="https://www.linkedin.com/in/fahimcp495">fahimcp495</a></li>
+        <li><span class="label">Codeforces</span> <a href="https://codeforces.com/profile/fahimcp495">fahimcp495</a></li>
+        <li><span class="label">CodeChef</span> <a href="https://www.codechef.com/users/fahimcp495">fahimcp495</a></li>
+        <li><span class="label">AtCoder</span> <a href="https://atcoder.jp/users/fahimcp495">fahimcp495</a></li>
+      </ul>
+    </aside>
+
+    <main id="main">
+      <nav class="topnav" aria-label="Main">
+        <a href="index.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html" aria-current="page">Projects</a>
+        <a href="achievements.html">Achievements</a>
+        <a href="experience.html">Experience</a>
+      </nav>
+
+      <h1>Projects</h1>
+
+      <article class="card" id="stereo">
+        <h2>Real-Time Stereo Matching Using Dynamic Programming</h2>
+        <p class="meta">
+          <span class="tag">Final-year project</span>
+          <span class="tag">University of Dhaka</span>
+          <span class="tag">C++</span>
+        </p>
+        <p>Stereo matching estimates depth from a pair of camera images. I built a C++ pipeline that combines sliding-window cost aggregation with scanline dynamic programming, and compared three variants: window-only, dynamic-programming-only, and combined. I evaluated them on left-right consistency, valid-pixel coverage and temporal stability. The system runs at 15&ndash;30 frames per second on laboratory video.</p>
+        <p>I worked with a teammate under faculty supervision and took primary responsibility for implementing and evaluating the algorithms. The project was my first look at a trade-off I keep returning to: matching quality against runtime.</p>
+      </article>
+
+      <article class="card" id="finally">
+        <h2>FINALLY: Open-Source Speech Enhancement</h2>
+        <p class="meta">
+          <span class="tag">PyTorch</span>
+          <span class="tag">Speech enhancement</span>
+          <span class="tag">Inverse AI</span>
+        </p>
+        <p>FINALLY (Babaev et al., Samsung Research, NeurIPS 2024) is a GAN-based speech-enhancement model built on HiFi++ with a WavLM encoder. At Inverse AI I implemented it from scratch in PyTorch and released the code as open source. The repository includes three-stage training (with 16 kHz to 48 kHz upsampling), multi-GPU training with DDP, and inference scripts.</p>
+        <p class="actions">
+          <a class="btn" href="https://github.com/inverse-ai/FINALLY-Speech-Enhancement">Code</a>
+          <a class="btn" href="https://arxiv.org/abs/2410.05920">Paper</a>
+          <a class="btn" href="https://openreview.net/forum?id=18RdkSv9h9">NeurIPS 2024</a>
+        </p>
+
+        <h3>How the implementation compares with the paper</h3>
+        <table class="scores">
+          <thead>
+            <tr><th>Metric</th><th>Paper</th><th>This implementation</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>UTMOS</td><td>4.32</td><td>4.30</td></tr>
+            <tr><td>WV-MOS</td><td>4.87</td><td>4.62</td></tr>
+            <tr><td>DNSMOS</td><td>3.22</td><td>3.30</td></tr>
+            <tr><td>PESQ</td><td>2.94</td><td>3.22</td></tr>
+            <tr><td>STOI</td><td>0.92</td><td>0.95</td></tr>
+            <tr><td>SDR</td><td>4.6</td><td>6.79</td></tr>
+          </tbody>
+        </table>
+        <p class="note">Scores are taken from the repository README, next to the paper's reported scores (the paper's figures are from VCTK-DEMAND; the README does not state its test set). The released model was trained on the paper's datasets plus additional curated data, so this is not a like-for-like comparison. The README labels the last metric SDR; the paper reports SI-SDR. The implementation is slightly lower on UTMOS and lower on WV-MOS.</p>
+      </article>
+
+      <article class="card" id="urgent">
+        <h2>ICASSP 2026 URGENT Challenge</h2>
+        <p class="meta">
+          <span class="tag">Track 1: Universal Speech Enhancement</span>
+          <span class="tag">Inverse AI</span>
+          <span class="tag">Top 10 team</span>
+        </p>
+        <p>Our team placed in the top 10 of the final results. I was responsible for model architecture research and experimentation, extending the FINALLY model with Transformer-based modifications.</p>
+        <p class="actions">
+          <a class="btn" href="https://urgent-challenge.com/competitions/15#final_results">Final results</a>
+        </p>
+      </article>
+    </main>
+
+    <footer>
+      &copy; 2026 Md Ibrahim Khandakar
+    </footer>
+  </div>
+</body>
+</html>
