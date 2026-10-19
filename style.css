@@ -257,3 +257,18 @@ footer {
   .page { display: block; padding: 0; }
   body { background: #fff; color: #000; }
 }
+
+
+/* Safety net: size the profile photo even if it is not wrapped in .avatar */
+.sidebar > img {
+  display: block;
+  width: 148px;
+  height: 148px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  margin-bottom: 18px;
+}
+@media (max-width: 860px) {
+  .sidebar > img { width: 92px; height: 92px; margin: 0; }
+}
